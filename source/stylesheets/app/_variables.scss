@@ -1,0 +1,98 @@
+@import "../bower/neat/app/assets/stylesheets/neat-helpers";
+
+/////////////////////////////////////////////////////////
+// Grid
+////////////////////////////////////////////////////////
+// $grid-columns: 12;
+//$column: 81px;
+// $gutter: 18px;
+// $max-width: 1400px;
+// $visual-grid: false;
+
+
+/////////////////////////////////////////////////////////
+// Colors
+////////////////////////////////////////////////////////
+$background-color: #dbddde;
+
+/////////////////////////////////////////////////////////
+// Type
+////////////////////////////////////////////////////////
+$base-font-size:    17px!default;
+$base-line-height:  30px!default;
+$line-height-ratio: $base-line-height / $base-font-size;
+
+$base-font-weight: normal;
+$base-font-family: $helvetica;
+$base-text-color: #8A8F90;
+
+// Using font mixinxs instead of these
+$headings-font-family: $helvetica;
+$headings-font-weight: normal;
+$headings-color: #333637;
+
+/*------------------------------------*\
+    $FONT-SIZES
+\*------------------------------------*/
+/**
+ * Font-sizes (in pixels). Refer to relevant sections for their implementations.
+ */
+$giga-size:         60px!default;
+$mega-size:         54px!default;
+$kilo-size:         48px!default;
+
+$h1-size:           30px!default; // .alpha
+$h2-size:           28px!default; // .beta
+$h3-size:           26px!default; // .gamma
+$h4-size:           24px!default; // .delta
+$h5-size:           18px!default; // .epsilon
+$h6-size:           16px!default; // .zeta
+
+$milli-size:        12px!default;
+$micro-size:        10px!default;
+
+
+// Z-index master list
+// -------------------------
+// Used for a bird's eye view of components dependent on the z-axis
+// Try to avoid customizing these :)
+
+$zindex-navbar:            1000;
+$zindex-dropdown:          1000;
+$zindex-popover:           1010;
+$zindex-tooltip:           1030;
+$zindex-navbar-fixed:      1030;
+$zindex-modal-background:  1040;
+$zindex-modal:             1050;
+
+// Media queries breakpoints
+// --------------------------------------------------
+
+// Extra small screen / phone
+$screen-xs:                  480px;
+$screen-xs-min:              $screen-xs;
+
+// Small screen / tablet
+$screen-sm:                  768px;
+$screen-sm-min:              $screen-sm;
+
+// Medium screen / desktop
+$screen-md:                  992px;
+$screen-md-min:              $screen-md;
+
+// Large screen / wide desktop
+$screen-lg:                  1200px;
+$screen-lg-min:              $screen-lg;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:              ($screen-sm-min - 1);
+$screen-sm-max:              ($screen-md-min - 1);
+$screen-md-max:              ($screen-lg-min - 1);
+
+/////////////////////////////////////////////////////////
+// Breakpoints
+////////////////////////////////////////////////////////
+$screen-br-xs: new-breakpoint(min-width $screen-xs);
+$screen-br-sm: new-breakpoint(min-width $screen-sm);
+$screen-br-md: new-breakpoint(min-width $screen-md);
+$screen-br-lg: new-breakpoint(min-width $screen-lg);

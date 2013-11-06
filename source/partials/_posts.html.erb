@@ -1,0 +1,21 @@
+{block:Posts}
+<article class="post post--{PostType}"
+         data-tags="{TagsAsClasses}"
+         data-type="{PostType}"
+         data-permalink="{Permalink}"
+         data-shorturl="{ShortURL}"
+         id="{PostID}">
+
+  <%= partial "partials/posts/answer" %>
+  <%= partial "partials/posts/audio" %>
+  <%= partial "partials/posts/chat" %>
+  <%= partial "partials/posts/link" %>
+  <%= partial "partials/posts/panorama" %>
+  <%= partial "partials/posts/photo" %>
+  <%= partial "partials/posts/photoset" %>
+  <%= partial "partials/posts/quote" %>
+  <%= partial "partials/posts/text" %>
+  <%= partial "partials/posts/video" %>
+
+</article>
+{/block:Posts}

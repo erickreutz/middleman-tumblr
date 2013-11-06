@@ -1,0 +1,29 @@
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  font:#{($base-font-size/16px)*1em}/#{$line-height-ratio} $base-font-family;
+  background: none;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  background:  $background-color;
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+  font-size:   $base-font-size;
+  line-height: $base-line-height;
+  color:       $base-text-color;
+  text-rendering: optimizeLegibility;
+  @include font-smoothing;
+}
+
+%container {
+  @include outer-container;
+}
+
+a {
+  text-decoration: none;
+}

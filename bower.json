@@ -1,0 +1,11 @@
+{
+  "name": "test",
+  "version": "0.0.0",
+  "dependencies": {
+    "bourbon": "latest",
+    "neat": "latest",
+    "normalize-scss": "latest",
+    "modernizr": "latest"
+  },
+  "devDependencies": {}
+}

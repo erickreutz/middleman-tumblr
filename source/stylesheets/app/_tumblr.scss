@@ -1,0 +1,25 @@
+.notes {}
+
+.note {}
+
+.avatar {
+  .note & {}
+}
+
+.avatar_frame {
+  .note & {}
+}
+
+.action {
+  .note & {}
+}
+
+
+.reblog_button {}
+
+.like_button {
+  iframe {}
+  &.liked {}
+  &:hover, &:active {}
+  &:active {}
+}

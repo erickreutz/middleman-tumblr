@@ -1,0 +1,60 @@
+/////////////////////////////////////////////////////////
+// Mixins
+////////////////////////////////////////////////////////
+@mixin font-size($font-size, $line-height:true){
+  font-size:$font-size;
+  font-size:($font-size / $base-font-size)*1rem;
+  @if $line-height == true {
+    line-height:ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
+  }
+}
+
+@mixin background-clip($clip: padding-box) {
+  @include prefixer(background-clip, $clip, webkit moz spec);
+}
+
+@mixin font-smoothing($smoothing: antialiased) {
+  @include prefixer(font-smoothing, $smoothing, webkit moz spec);
+}
+
+%font-smoothing {
+  @include font-smoothing;
+}
+
+%absolute-center {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+@mixin filter($var) {
+  -webkit-filter: $var;
+  -moz-filter: $var;
+  -ms-filter: $var;
+  -o-filter: $var;
+  filter: $var;
+}
+
+// Responsive utilities
+// -------------------------
+// More easily include all the states for responsive-utilities.less.
+@mixin responsive-visibility($disp: block) {
+  display: $disp !important;
+
+  // This syntax is not supported by Sass
+  // tr& { display: table-row !important; }
+  // th&,
+  // td& { display: table-cell !important; }
+}
+
+@mixin responsive-invisibility() {
+  display: none !important;
+
+  // This syntax is not supported by Sass
+  // tr& { display: none !important; }
+  // th&,
+  // td& { display: none !important; }
+}

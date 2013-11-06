@@ -1,0 +1,242 @@
+@mixin visible-xs($namespace: "", $display: block) {
+  .visible-#{$namespace}-xs {
+    @include responsive-invisibility();
+    @include media(max-width $screen-xs-max) {
+      @include responsive-visibility($display);
+    }
+    &.visible-#{$namespace}-sm {
+      @include media(min-width $screen-sm-min max-width $screen-sm-max) {
+        @include responsive-visibility($display);
+      }
+    }
+    &.visible-#{$namespace}-md {
+      @include media(min-width $screen-md-min max-width $screen-md-max) {
+        @include responsive-visibility($display);
+      }
+    }
+    &.visible-#{$namespace}-lg {
+      @include media(min-width $screen-lg-min) {
+        @include responsive-visibility($display);
+      }
+    }
+  }
+}
+
+@include visible-xs("block",        block);
+@include visible-xs("inline-block", inline-block);
+@include visible-xs("table-cell",   table-cell);
+@include visible-xs("table",        table);
+@include visible-xs("inline",       inline);
+
+@mixin visible-sm($namespace: "", $display: block) {
+  .visible-#{$namespace}-sm {
+    @include responsive-invisibility();
+    &.visible-#{$namespace}-xs {
+      @include media(max-width $screen-xs-max) {
+        @include responsive-visibility($display);
+      }
+    }
+    @include media(min-width $screen-sm-min max-width $screen-sm-max) {
+      @include responsive-visibility($display);
+    }
+    &.visible-#{$namespace}-md {
+      @include media(min-width $screen-md-min max-width $screen-md-max) {
+        @include responsive-visibility($display);
+      }
+    }
+    &.visible-#{$namespace}-lg {
+      @include media(min-width $screen-lg-min) {
+        @include responsive-visibility($display);
+      }
+    }
+  }
+}
+
+@include visible-sm("block",        block);
+@include visible-sm("inline-block", inline-block);
+@include visible-sm("table-cell",   table-cell);
+@include visible-sm("table",        table);
+@include visible-sm("inline",       inline);
+
+@mixin visible-md($namespace: "", $display: block) {
+  .visible-#{$namespace}-md {
+    @include responsive-invisibility();
+    &.visible-#{$namespace}-xs {
+      @include media(max-width $screen-xs-max) {
+        @include responsive-visibility($display);
+      }
+    }
+    &.visible-#{$namespace}-sm {
+      @include media(min-width $screen-sm-min max-width $screen-sm-max) {
+        @include responsive-visibility($display);
+      }
+    }
+    @include media(min-width $screen-md-min max-width $screen-md-max) {
+      @include responsive-visibility($display);
+    }
+    &.visible-#{$namespace}-lg {
+      @include media(min-width $screen-lg-min) {
+        @include responsive-visibility($display);
+      }
+    }
+  }
+}
+
+@include visible-md("block",        block);
+@include visible-md("inline-block", inline-block);
+@include visible-md("table-cell",   table-cell);
+@include visible-md("table",        table);
+@include visible-md("inline",       inline);
+
+@mixin visible-lg($namespace: "", $display: block) {
+  .visible-#{$namespace}-lg {
+     @include responsive-invisibility();
+    &.visible-#{$namespace}-xs {
+      @include media (max-width $screen-xs-max) {
+         @include responsive-visibility($display);
+      }
+    }
+    &.visible-#{$namespace}-sm {
+      @include media (min-width $screen-sm-min max-width $screen-sm-max) {
+         @include responsive-visibility($display);
+      }
+    }
+    &.visible-#{$namespace}-md {
+      @include media(min-width $screen-md-min max-width $screen-md-max) {
+         @include responsive-visibility($display);
+      }
+    }
+    @include media(min-width $screen-lg-min) {
+       @include responsive-visibility($display);
+    }
+  }
+}
+
+@include visible-lg("block",        block);
+@include visible-lg("inline-block", inline-block);
+@include visible-lg("table-cell",   table-cell);
+@include visible-lg("table",        table);
+@include visible-lg("inline",       inline);
+
+@mixin hidden-xs($namespace: "", $display: block) {
+  .hidden-#{$namespace}-xs {
+    @include responsive-visibility($display);
+    @include media(max-width $screen-xs-max) {
+      @include responsive-invisibility();
+    }
+    &.hidden-#{$namespace}-sm {
+      @include media(min-width $screen-sm-min max-width $screen-sm-max) {
+        @include responsive-invisibility();
+      }
+    }
+    &.hidden-#{$namespace}-md {
+      @include media (min-width $screen-md-min max-width $screen-md-max) {
+         @include responsive-invisibility();
+      }
+    }
+    &.hidden-#{$namespace}-lg {
+      @include media (min-width $screen-lg-min) {
+         @include responsive-invisibility();
+      }
+    }
+  }
+}
+
+@include hidden-xs("block",        block);
+@include hidden-xs("inline-block", inline-block);
+@include hidden-xs("table-cell",   table-cell);
+@include hidden-xs("table",        table);
+@include hidden-xs("inline",       inline);
+
+
+@mixin hidden-sm($namespace: "", $display: block) {
+  .hidden-#{$namespace}-sm {
+    @include responsive-visibility($display);
+    &.hidden-#{$namespace}-xs {
+      @include media (max-width $screen-xs-max) {
+         @include responsive-invisibility();
+      }
+    }
+    @include media (min-width $screen-sm-min max-width $screen-sm-max) {
+       @include responsive-invisibility();
+    }
+    &.hidden-#{$namespace}-md {
+      @include media (min-width $screen-md-min max-width $screen-md-max) {
+         @include responsive-invisibility();
+      }
+    }
+    &.hidden-#{$namespace}-lg {
+      @include media (min-width $screen-lg-min) {
+         @include responsive-invisibility();
+      }
+    }
+  }
+}
+
+
+@include hidden-sm("block",        block);
+@include hidden-sm("inline-block", inline-block);
+@include hidden-sm("table-cell",   table-cell);
+@include hidden-sm("table",        table);
+@include hidden-sm("inline",       inline);
+
+@mixin hidden-md($namespace: "", $display: block) {
+ .hidden-#{$namespace}-md {
+  @include responsive-visibility($display);
+   &.hidden-#{$namespace}-xs {
+     @include media (max-width $screen-xs-max) {
+        @include responsive-invisibility();
+     }
+   }
+   &.hidden-#{$namespace}-sm {
+     @include media (min-width $screen-sm-min max-width $screen-sm-max) {
+        @include responsive-invisibility();
+     }
+   }
+   @include media (min-width $screen-md-min max-width $screen-md-max) {
+    @include responsive-invisibility();
+   }
+   &.hidden-#{$namespace}-lg {
+     @include media (min-width $screen-lg-min) {
+        @include responsive-invisibility();
+     }
+   }
+ }
+}
+
+@include hidden-md("block",        block);
+@include hidden-md("inline-block", inline-block);
+@include hidden-md("table-cell",   table-cell);
+@include hidden-md("table",        table);
+@include hidden-md("inline",       inline);
+
+@mixin hidden-lg($namespace: "", $display: block) {
+  .hidden-#{$namespace}-lg {
+     @include responsive-visibility($display);
+    &.hidden-#{$namespace}-xs {
+      @include media (max-width $screen-xs-max) {
+         @include responsive-invisibility();
+      }
+    }
+    &.hidden-#{$namespace}-sm {
+      @include media (min-width $screen-sm-min max-width $screen-sm-max) {
+         @include responsive-invisibility();
+      }
+    }
+    &.hidden-#{$namespace}-md {
+      @include media (min-width $screen-md-min max-width $screen-md-max) {
+         @include responsive-invisibility();
+      }
+    }
+    @include media (min-width $screen-lg-min) {
+       @include responsive-invisibility();
+    }
+  }
+}
+
+@include hidden-lg("block",        block);
+@include hidden-lg("inline-block", inline-block);
+@include hidden-lg("table-cell",   table-cell);
+@include hidden-lg("table",        table);
+@include hidden-lg("inline",       inline);
+
