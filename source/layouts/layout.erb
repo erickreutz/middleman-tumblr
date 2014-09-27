@@ -48,6 +48,14 @@
     {CustomCSS}
   </style>
 
+  <% unless build? %>
+    <script src="http://assets.tumblr.com/assets/scripts/tumblelog.js"></script>
+    <!--
+      Load a default font like so
+      <link rel="stylesheet" type="text/css" href="http://assets.tumblr.com/fonts/callunasans/stylesheet.css?v=3">
+    -->
+  <% end %>
+
 </head>
 <body>
   <%= yield %>
