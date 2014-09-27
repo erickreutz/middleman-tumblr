@@ -4,21 +4,82 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>{Title}</title>
+  <title>{Title}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
+
+  <!-- Customization Options -->
+  {block:Hidden}
+  <meta name="tumblr-theme" content="" />
+  <meta name="image:About" content=""/>
+  <meta name="Title font" content="Futura">
+  <meta name="Title font weight" content="normal" title="Normal">
+  <meta name="Title font weight" content="bold" title="Bold">
+  <meta name="font:Body" content="Calluna Sans">
+  <meta name="color:Accent color" content="#000000">
+
+  <meta name="text:Google Analytics ID" content="">
+  <meta name="text:Gauges Analytics ID" content="">
+  {/block:Hidden}
+
+  {block:Description}
+  <meta name="description" content="{MetaDescription}" />
+  {/block:Description}
+
   <link rel="shortcut icon" href="{Favicon}">
   <link rel="alternate" type="application/rss+xml" href="{RSS}">
-  {block:Description}
-    <meta name="description" content="{MetaDescription}" />
-  {/block:Description}
-  <meta name="viewport" content="width=device-width">
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-  <%= stylesheet_link_tag "theme" %>
-  <%= javascript_include_tag  "modernizr" %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="{Favicon}">
+  <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+  <link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+
+  <%= stylesheet_link_tag 'theme' %>
+  <%= javascript_include_tag  'modernizr' %>
+
+  <!-- Custom CSS -->
+  <style type="text/css" id="theme">
+    {CustomCSS}
+  </style>
+
 </head>
 <body>
   <%= yield %>
 
-  <%= javascript_include_tag  "theme" %>
+  <%= javascript_include_tag  'theme' %>
+
+  {block:IfGoogleAnalyticsID}
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', '{text:Google Analytics ID}', 'tumblr.com');
+      ga('send', 'pageview');
+    </script>
+  {/block:IfGoogleAnalyticsID}
+
+
+  {block:IfGaugesAnalyticsID}
+    <script type="text/javascript">
+      var _gauges = _gauges || [];
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', '{text:Gauges Analytics ID}');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })();
+    </script>
+  {/block:IfGaugesAnalyticsID}
 </body>
+<!--
+    This Tumblr Theme and all of its CSS, Javascript,
+    and media assets are subject to Tumblr's Terms of Service:
+
+    http://www.tumblr.com/terms_of_service
+-->
 </html>
