@@ -1,20 +1,42 @@
-@import "../bower/bourbon/app/assets/stylesheets/bourbon";
-@import "app/variables";
-@import "../bower/neat/app/assets/stylesheets/neat";
-@import "app/mixins";
+//
+// Libs
+// --------------------------------------------------
+@import '../bower/breakpoint-sass/stylesheets/breakpoint';
+@import '../bower/normalize-scss/normalize';
 
-@import "../bower/normalize-scss/normalize";
+//
+// Global Variables and Styles
+// --------------------------------------------------
+@import 'app/variables';
+@import 'app/fonts';
+@import 'app/base';
+@import 'app/icons';
+@import 'app/headings';
 
-@import "app/fonts";
-@import "app/base";
-@import "app/icons";
-@import "app/headings";
+//
+// Utils
+// --------------------------------------------------
+@import 'app/utils/responsive-utils';
 
-@import "app/utils/responsive-utils";
+//
+// Layouts
+// --------------------------------------------------
+@import 'app/layouts/l-main';
 
+//
+// Components
+// --------------------------------------------------
+
+//
+// Tumblr Specific
+// --------------------------------------------------
 @import "app/tumblr";
 
-@import "app/posts/base"
+//
+// Posts
+// --------------------------------------------------
+
+@import "app/posts/base";
 @import "app/posts/answer";
 @import "app/posts/audio";
 @import "app/posts/chat";
@@ -24,3 +46,8 @@
 @import "app/posts/quote";
 @import "app/posts/text";
 @import "app/posts/video";
+
+//
+// State
+// --------------------------------------------------
+@import 'app/state';

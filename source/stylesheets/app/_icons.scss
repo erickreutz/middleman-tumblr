@@ -1,8 +1,8 @@
 @import "compass/utilities/sprites";
 @import "compass/css3/background-size";
 
-$sprites: sprite-map("icons/*.png", $spacing: 2px);
-$sprites2x: sprite-map("icons-2x/*.png", $spacing: 2px);
+// $sprites: sprite-map("icons/*.png", $spacing: 2px);
+// $sprites2x: sprite-map("icons-2x/*.png", $spacing: 2px);
 
 @mixin icon($name, $images: $sprites) {
   @include sprite-dimensions($images, $name);
@@ -22,7 +22,7 @@ $sprites2x: sprite-map("icons-2x/*.png", $spacing: 2px);
 // .i-base {
 //   background-image: inline-sprite($sprites);
 //   background-repeat: no-repeat;
-
+//
 //   @include hidpi(2.0) {
 //     background-image: inline-sprite($sprites2x);
 //   }
@@ -34,5 +34,8 @@ $sprites2x: sprite-map("icons-2x/*.png", $spacing: 2px);
 //   vertical-align: middle;
 // }
 
-
-
+// $icons: ;
+//
+// @each $icon in $icons {
+//   .i-#{$icon} { @include icon-with-retina("icon-#{$icon}"); }
+// }
