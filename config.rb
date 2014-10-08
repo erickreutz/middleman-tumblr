@@ -1,6 +1,8 @@
 # use Rack::Rewrite do
 #   rewrite %r{^\/page\/[0-9]}, '/index.html'
 #   rewrite %r{^\/about}, '/index.html'
+#   r301    %r{^\/submit},      'http://www.corsproxy.com/posttypes.tumblr.com/submit'
+#   r301    %r{^\/ask},         'http://www.corsproxy.com/posttypes.tumblr.com/ask'
 # end
 
 set :css_dir, 'stylesheets'
@@ -35,6 +37,9 @@ end
 # Build-specific configuration
 configure :build do
   activate :gzip
+
+  # activate :asset_host
+  # set :asset_host, "http://#{ENV['AWS_BUCKET_NAME']}.s3.amazonaws.com"
 
   ignore 'bower/**/*'
   ignore 'images/icons/*'
