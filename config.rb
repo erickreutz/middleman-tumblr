@@ -1,15 +1,13 @@
 require 'dotenv'
 
+Dotenv.load
+
 # use Rack::Rewrite do
 #   rewrite %r{^\/page\/[0-9]}, '/index.html'
 #   rewrite %r{^\/about}, '/index.html'
 #   r301    %r{^\/submit},      'http://www.corsproxy.com/posttypes.tumblr.com/submit'
 #   r301    %r{^\/ask},         'http://www.corsproxy.com/posttypes.tumblr.com/ask'
 # end
-
-before_configuration do
-  Dotenv.load
-end
 
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
