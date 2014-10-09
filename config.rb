@@ -1,9 +1,16 @@
+require 'dotenv'
+
 # use Rack::Rewrite do
 #   rewrite %r{^\/page\/[0-9]}, '/index.html'
 #   rewrite %r{^\/about}, '/index.html'
 #   r301    %r{^\/submit},      'http://www.corsproxy.com/posttypes.tumblr.com/submit'
 #   r301    %r{^\/ask},         'http://www.corsproxy.com/posttypes.tumblr.com/ask'
 # end
+
+
+before_configuration do
+  Dotenv.load
+end
 
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
@@ -26,11 +33,11 @@ end
 activate :sync do |sync|
   sync.fog_provider = 'AWS'
   sync.fog_directory = ENV['AWS_BUCKET_NAME']
-  sync.fog_region = 'us-east-1'
+  sync.fog_region = 'us-east-1' # us-east-1, us-west-1, eu-west-1, ap-southeast-1
   sync.aws_access_key_id = ENV['AWS_ACCESS_KEY_ID']
   sync.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
   sync.existing_remote_files = 'keep'
-  sync.gzip_compression = true
+  sync.gzip_compression = false
   sync.after_build = false
 end
 
