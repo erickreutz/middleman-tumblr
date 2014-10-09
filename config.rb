@@ -7,7 +7,6 @@ require 'dotenv'
 #   r301    %r{^\/ask},         'http://www.corsproxy.com/posttypes.tumblr.com/ask'
 # end
 
-
 before_configuration do
   Dotenv.load
 end
