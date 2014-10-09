@@ -43,8 +43,6 @@ end
 
 # Build-specific configuration
 configure :build do
-  activate :gzip
-
   # activate :asset_host
   # set :asset_host, "http://#{ENV['AWS_BUCKET_NAME']}.s3.amazonaws.com"
 
